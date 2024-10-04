@@ -9,7 +9,7 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
+    --background: #000000;
     --foreground: #ededed;
   }
 }
@@ -25,3 +25,34 @@ body {
     text-wrap: balance;
   }
 }
+
+.moving-text {
+  background: linear-gradient(90deg, #ff0000, #ff5e5e, #d10000, #ff1e1e, #b30000, #ff4040);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: color-change 5s ease-in-out infinite;
+  background-size: 300%;
+}
+
+@keyframes color-change {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.poppins {
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+}
+
+.gg {
+  background: radial-gradient(circle, indigo 20%, #2a2a60 50%, black 100%);
+}
+
+
