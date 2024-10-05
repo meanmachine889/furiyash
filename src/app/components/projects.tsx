@@ -85,7 +85,7 @@ const Projects = () => {
   return (
     <div className="flex flex-col items-center justify-center w-[100%]">
       <div className="w-[100%] px-[3%] py-5 flex items-center justify-end border-gray-500">
-        <h1 className="font-[family-name:var(--font-clash-semi)] text-gray-300 text-[5vw] ">
+        <h1 className="font-[family-name:var(--font-clash-semi)] text-gray-300 md:text-[5vw] text-[8vw]">
           Projects
         </h1>
       </div>
@@ -93,10 +93,10 @@ const Projects = () => {
         {projects.map((project, index) => (
           <div
             key={index}
-            className="flex justify-between h-[15rem] items-center border-2 transition-all border-gray-500 w-[100%]"
+            className="flex flex-col lg:flex-row justify-between h-auto lg:h-[18vw] items-center border-y-2 transition-all border-gray-500 w-[100%]"
           >
             {/* Left box for image */}
-            <div className="w-[33%] border-r-2 border-gray-500 h-[100%] flex items-center justify-center">
+            <div className="w-[100%] lg:w-[33%] border-b-2 lg:border-b-0 lg:border-r-2 border-gray-500 h-[100%] flex items-center justify-center">
               <Image
                 src={project.imageUrl}
                 alt={`${project.name} image`}
@@ -107,12 +107,12 @@ const Projects = () => {
             </div>
 
             {/* Right box for project details */}
-            <div className="w-[65%] py-5 flex flex-col justify-between h-[100%] px-5">
-              <div className="flex flex-col">
-                <p className="text-gray-300 text-[2vw] font-[family-name:var(--font-archivo)] md:text-[2.5vw]">
+            <div className="w-[100%] lg:w-[65%] py-5 flex flex-col justify-between h-[100%] px-5">
+              <div className="flex flex-col mb-5 lg:mb-0">
+                <p className="text-gray-300 text-[6vw] md:text-[2vw] font-[family-name:var(--font-archivo)]">
                   {project.name}
                 </p>
-                <p className="text-gray-400 text-[1.3vw] md:text-[1.4vw]">
+                <p className="text-gray-400 text-[4.5vw] md:text-[1.3vw]">
                   {project.stack}
                 </p>
               </div>
@@ -121,7 +121,7 @@ const Projects = () => {
                   href={project.website}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center text-gray-300 text-[1.4vw] md:text-[1.2vw] hover:text-gray-100 mt-3"
+                  className="flex items-center text-gray-300 text-[4vw] md:text-[1.4vw] hover:text-gray-100 mt-3"
                 >
                   View <ArrowUpRight className="ml-2" />
                 </a>
@@ -129,17 +129,17 @@ const Projects = () => {
                   href={project.website}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center text-gray-300 text-[1.4vw] md:text-[1.2vw] hover:text-gray-100 mt-3"
+                  className="flex items-center text-gray-300 text-[4vw] md:text-[1.4vw] hover:text-gray-100 mt-3"
                 >
-                  Visit Website <ArrowUpRight className="ml-2" />
+                  Website <ArrowUpRight className="ml-2" />
                 </a>
                 <a
                   href={project.website}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center text-gray-300 text-[1.4vw] md:text-[1.2vw] hover:text-gray-100 mt-3"
+                  className="flex items-center text-gray-300 text-[4vw] md:text-[1.4vw] hover:text-gray-100 mt-3"
                 >
-                  Visit Github <ArrowUpRight className="ml-2" />
+                  Github <ArrowUpRight className="ml-2" />
                 </a>
               </div>
             </div>

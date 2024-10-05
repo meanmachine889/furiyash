@@ -34,38 +34,49 @@ const experience = [
 
 const Experience = () => {
   return (
-    <div className="flex flex-col items-center justify-center w-[100%]">
+    <div className="flex flex-col items-center justify-center w-full">
+      {/* Header */}
       <div className="w-[95%] flex items-center justify-end py-5">
-        <h1 className="font-[family-name:var(--font-clash-semi)] text-gray-300 text-[5vw]">
+        <h1 className="font-[family-name:var(--font-clash-semi)] text-gray-300 text-[8vw] md:text-[5vw]">
           Work
         </h1>
       </div>
-      <div className="w-[100%] flex font-[family-name:var(--font-geist-mono)] flex-col">
+      
+      {/* Experience List */}
+      <div className="w-full flex font-[family-name:var(--font-geist-mono)] flex-col">
         {experience.map((exp, index) => (
           <div
             key={index}
-            className="flex justify-between h-[18rem] px-5 items-center border-y-2 transition-all  border-gray-700 py-5 w-[100%]"
+            className="flex md:flex-row justify-between md:h-[12vw] h-auto md:px-9 px-3 items-center border-y-2 border-gray-500 py-5 w-full transition-all"
           >
-            <div className="w-[95%] flex justify-between h-[100%] flex-col items-start text-left">
-              <div className="flex justify-start w-[65%] md:gap-5 md:w-[100%] flex-col">
-                <p className="text-gray-300 text-[2vw] font-[family-name:var(--font-archivo)] md:text-[2.5vw]">
+            <div className="w-full md:w-[95%] flex justify-between flex-col md:flex-row items-start md:items-center text-left">
+              {/* Company and Role Info */}
+              <div className="flex flex-col w-full md:w-[65%] gap-2 md:gap-5">
+                <p className="text-gray-300 text-[6vw] md:text-[2.5vw] font-[family-name:var(--font-archivo)]">
                   {exp.company}
                 </p>
-                <p className="text-gray-400 text-[1.3vw] md:text-[1.4vw]">
-                  <span className="text-gray-400 text-[1.4vw] md:text-[1.7vw]">{exp.role} / </span>{exp.stack}
+                <p className="text-gray-400 text-[4.5vw] md:text-[1.4vw]">
+                  <span className="text-gray-400 text-[4.5vw] md:text-[1.7vw]">
+                    {exp.role} /{" "} 
+                  </span> 
+                  {exp.stack}
                 </p>
               </div>
-              <div className="flex flex-col justify-start w-[30%] md:w-[100%] md:mb-2">
-                <p className="text-gray-300 text-[2vw] md:text-[1.7vw]">
+              
+              {/* Date and Duration Info */}
+              <div className="flex flex-col w-full md:w-[30%] md:gap-5 mt-3 md:mt-0 md:mb-2">
+                <p className="text-gray-300 text-[5vw] md:text-[1.7vw]">
                   {exp.date}
                 </p>
-                <p className="text-gray-500 text-[2vw] md:text-[1.1vw]">
+                <p className="text-gray-500 text-[4.5vw] md:text-[1.7vw]">
                   {exp.duration}
                 </p>
               </div>
             </div>
-            <button className="self-end  text-slate-300 rounded-full flex items-center justify-center">
-              <ArrowUpRight className="h-12 w-12" />
+            
+            {/* Arrow Button */}
+            <button className="self-end md:self-center mt-3 md:mt-0 text-slate-300 rounded-full flex items-center justify-center">
+              <ArrowUpRight className="h-[9vw] w-[9vw] md:h-[3vw] md:w-[3vw]" />
             </button>
           </div>
         ))}
