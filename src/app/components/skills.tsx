@@ -25,7 +25,22 @@ const skills = [
   },
   {
     category: "DevOps & Tools",
-    technologies: ["AWS", "Docker", "Git", "GitHub Actions", "CI/CD", "Jira"],
+    technologies: ["Linux", "Ubuntu", "AWS", "Docker", "Git", "GitHub Actions", "CI/CD", "Jira"],
+  },
+  {
+    category: "Cyber Security",
+    technologies: ["Steganography", "Encryption & Decryption"],
+  },
+  {
+    category: "Languages",
+    technologies: [
+      "C++",
+      "Java",
+      "Python",
+      "C",
+      "JavaScript",
+      "TypeScript"
+    ],
   },
   {
     category: "Others",

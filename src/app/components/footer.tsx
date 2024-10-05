@@ -3,7 +3,7 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <div className="flex flex-col lg:flex-row w-full px-5 py-8 gap-10 md:gap-[10vw] lg:h-[15vw] h-auto justify-start md:items-end items-start">
+    <div className="flex flex-col lg:flex-row w-full bg-[#0f0f0f] px-5 py-8 gap-10 md:gap-[10vw] lg:h-[15vw] h-auto justify-start md:items-end items-start">
       {/* Section 1: Let's Connect */}
       <div className="flex flex-col items-start w-full lg:w-auto gap-9 text-left">
         <p className="font-[family-name:var(--font-clash-semi)] text-gray-300 text-[6vw] md:text-[4vw] lg:text-[3vw]">
