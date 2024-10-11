@@ -36,8 +36,8 @@ const Experience = () => {
   return (
     <div className="flex flex-col items-center justify-center w-full">
       {/* Header */}
-      <div className="w-[95%] flex items-center justify-end py-5">
-        <h1 className="font-[family-name:var(--font-clash-semi)] text-gray-300 text-[8vw] md:text-[5vw]">
+      <div className="w-[95%] flex items-center justify-end py-9">
+        <h1 className="font-[family-name:var(--font-clash-semi)] text-gray-300 text-[8vw] md:text-[5vw] lg:text-[4vw] ">
           Work
         </h1>
       </div>

@@ -84,8 +84,8 @@ const projects = [
 const Projects = () => {
   return (
     <div className="flex flex-col items-center justify-center w-[100%]">
-      <div className="w-[100%] px-[3%] py-5 flex items-center justify-end border-gray-500">
-        <h1 className="font-[family-name:var(--font-clash-semi)] text-gray-300 md:text-[5vw] text-[8vw]">
+      <div className="w-[100%] px-[3%] py-9 flex items-center justify-end border-gray-500">
+        <h1 className="font-[family-name:var(--font-clash-semi)] text-gray-300 text-[8vw] md:text-[5vw] lg:text-[4vw] ">
           Projects
         </h1>
       </div>

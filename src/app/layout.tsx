@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
-import Footer from "./components/footer";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -19,8 +18,13 @@ const ClashDisplaySemibold = localFont({
   weight: "100 900",
 });
 const Archivo = localFont({
-  src: "./fonts/Archivo-Bold.woff",
+  src: "./fonts/Archivo-Regular.woff",
   variable: "--font-archivo",
+  weight: "100 900",
+});
+const ArchivoBold = localFont({
+  src: "./fonts/Archivo-Bold.woff",
+  variable: "--font-archivo-bold",
   weight: "100 900",
 });
 export const metadata: Metadata = {
@@ -45,11 +49,11 @@ export default function RootLayout({
         />
       </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${ClashDisplaySemibold.variable} ${Archivo.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${ClashDisplaySemibold.variable} ${Archivo.variable} ${ArchivoBold.variable} antialiased`}
       >
         {children}
         <footer>
-          <Footer />
+          {/* <Footer /> */}
         </footer>
       </body>
     </html>

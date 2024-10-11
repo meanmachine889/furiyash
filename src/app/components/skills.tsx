@@ -56,11 +56,11 @@ const skills = [
 
 const Skills = () => {
   return (
-    <div className="flex flex-col items-center border-y-2 border-gray-500 justify-center w-[100%] mt-10">
-      <div className="w-[95%] flex items-center justify-end py-5">
-        <h1 className="font-[family-name:var(--font-clash-semi)] text-gray-300 text-[8vw] md:text-[5vw] lg:text-[4vw] ">
+    <div className="flex flex-col items-center border-y-2 border-gray-500 justify-center w-[100%]">
+      <div className="w-[95%] flex items-center justify-end py-9">
+        {/* <h1 className="font-[family-name:var(--font-clash-semi)] text-gray-300 text-[8vw] md:text-[5vw] lg:text-[4vw] ">
           Skills
-        </h1>
+        </h1> */}
       </div>
       <div className="w-[100%] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
         {skills.map((skill, index) => (
