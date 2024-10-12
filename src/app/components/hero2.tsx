@@ -5,7 +5,7 @@ import { BoxReveal } from "./ui/BoxReveal";
 const Hero2 = () => {
   return (
     <>
-      <div className="flex w-[100%] gap-9 text-gray-300 flex-col bg-black min-h-[92vh]  min-w-screen justify-center items-center">
+      <div className="flex w-[100%] gap-9 text-gray-300 flex-col bg-black h-fit min-w-screen justify-center items-center">
         <div className="flex flex-col gap-3 border-x border-gray-700 text-gray-300 bg-black h-[92vh] w-[90%] px-9 justify-center items-start">
           <div className="flex flex-col max-h-fit leading-tight">
             <BoxReveal boxColor={"0b0b0b"} duration={0.5}>
