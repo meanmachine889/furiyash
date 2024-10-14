@@ -2,7 +2,7 @@ import React from "react";
 
 const Nav = ({ toggleSidebar }: { toggleSidebar: () => void }) => {
   return (
-    <nav className="w-[100%] border-b border-gray-700 h-[4vw] bg-black text-gray-300 md:flex hidden justify-between gap-[6rem] px-9 items-center m-0">
+    <nav className="w-[100%] border-b border-gray-700 h-[4vw] bg-black text-gray-300 hidden justify-between gap-[6rem] px-9 items-center m-0">
       <div className="font-[family-name:var(--font-archivo-bold)] md:text-2xl md:block hidden">
         Yash
       </div>

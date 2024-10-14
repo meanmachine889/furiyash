@@ -2,7 +2,6 @@
 import Hero2 from "./components/hero2";
 import Nav from "./components/nav";
 import {useState} from "react";
-import NavHero from "./components/navHero";
 import Project from "./components/projects/Project";
 import landing1 from "../app/public/images/mhashlanding.png";
 import clarityImage from "../app/public/images/Component2.png";
@@ -10,6 +9,10 @@ import connectImage from "../app/public/images/connectlanding.png";
 import leetImage from "../app/public/images/leetlanding.png";
 import vibezImage from "../app/public/images/vibezlanding.png";
 import Experience from "@/app/components/experience";
+import Projectsgrid from "@/app/components/projectsgrid";
+import Navhehe from "@/app/components/navhehe";
+import Skills from "@/app/components/skills";
+import {Contact} from "@/app/components/contact"
 
 
 const projectContent = [
@@ -23,7 +26,7 @@ const projectContent = [
             {
                 src: landing1, // imported image
                 alt: "Clarity",
-                text: "A platform for our college hackathon, bringing together more than 2,000 students from over 500 colleges nationwide to compete.",
+                text: "A platform for our college hackathon.",
             },
         ]
     },
@@ -65,7 +68,7 @@ const projectContent = [
             {
                 src: leetImage, // imported image
                 alt: "leetcoach",
-                text: "A coding platform with a user dashboard, offering AI-integrated personalized hints and code analysis to enhance learning and problem-solving skills.",
+                text: "An AI integrated coding platform.",
             },
         ]
     },
@@ -99,9 +102,9 @@ export default function Home() {
         <div className="w-screen flex flex-col justify-start items-center">
             <Nav toggleSidebar={toggleSidebar}/>
             <Hero2/>
-            <NavHero selectedOption={selectedOption} setSelectedOption={setSelectedOption}/>
-            <Project data={projectContent[selectedOption-1]}/>
-            <Experience />
+            <Navhehe setSelectedIndex={setSelectedOption} selectedIndex={selectedOption} />
+            {selectedOption === 1 ? <Projectsgrid/> : selectedOption === 2 ? <Skills /> : selectedOption === 3 ? <Experience /> : <></>}
+            <Contact />
         </div>
     );
 }

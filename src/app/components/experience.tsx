@@ -1,5 +1,6 @@
 import {ArrowUpRight} from "lucide-react";
-import React from "react";
+import React, { useRef } from "react";
+import { useInView } from "framer-motion";
 
 const experience = [
     {
@@ -33,62 +34,91 @@ const experience = [
 ];
 
 const Experience = () => {
+    const createRefInView = () => {
+        const ref = useRef(null);
+        const isInView = useInView(ref, { once: true });
+        return { ref, isInView };
+    };
+
     return (
-        <div className="flex flex-col items-center justify-center w-full">
-            <div className="grid border-b border-gray-700 w-[100%] grid-cols-12 h-[5rem] min-h-fit items-center justify-end">
-                <div className={"col-span-1 border-r border-gray-700 h-[100%]"}></div>
-                <div className="col-span-10 font-[family-name:var(--font-clash-semi)] text-gray-300 text-[8vw] md:text-[5vw] lg:text-[4vw] ">
-                </div>
-                <div className={"col-span-1 border-l border-gray-700 h-[100%]"}></div>
-            </div>
-            <div className="grid w-[100%] grid-cols-12 h-[5rem] min-h-fit items-center justify-end">
-                <div className={"col-span-1 grids border-r border-gray-700 h-[100%]"}></div>
-                <div
-                    className="col-span-10 font-[family-name:var(--font-clash-semi)] text-gray-300 text-[8vw] md:text-[5vw] lg:text-[3vw] flex items-center justify-center ">
-                    Work
-                </div>
-                <div className={"col-span-1 grids border-l border-gray-700 h-[100%]"}></div>
-            </div>
+        <div className="flex flex-col items-center grids justify-center w-full">
+            <div className="w-[90%] bg-black border-x border-gray-700 flex font-[family-name:var(--font-geist-mono)] flex-col">
+                {experience.map((exp, index) => {
+                    const companyRef = createRefInView();
+                    const roleRef = createRefInView();
+                    const dateRef = createRefInView();
+                    const durationRef = createRefInView();
 
-            <div className="w-full flex font-[family-name:var(--font-geist-mono)] flex-col">
-                {experience.map((exp, index) => (
-                    <div
-                        key={index}
-                        className="flex md:flex-row justify-between md:h-[12vw] h-auto md:px-9 px-3 items-center border-y-2 border-gray-500 py-5 w-full transition-all"
-                    >
+                    return (
                         <div
-                            className="w-full md:w-[95%] flex justify-between flex-col md:flex-row items-start md:items-center text-left">
-                            {/* Company and Role Info */}
-                            <div className="flex flex-col w-full md:w-[65%] gap-2 md:gap-5">
-                                <p className="text-gray-300 text-[6vw] md:text-[2.5vw] font-[family-name:var(--font-archivo)]">
-                                    {exp.company}
-                                </p>
-                                <p className="text-gray-400 text-[4.5vw] md:text-[1.4vw]">
-                  <span className="text-gray-400 text-[4.5vw] md:text-[1.7vw]">
-                    {exp.role} /{" "} 
-                  </span>
-                                    {exp.stack}
-                                </p>
+                            key={index}
+                            className="flex md:flex-row justify-between md:h-[12vw] h-auto md:px-9 px-3 items-center border-b border-gray-700 py-5 w-full transition-all"
+                        >
+                            <div
+                                className="w-full md:w-[95%] flex justify-between flex-col md:flex-row items-start md:items-center text-left"
+                            >
+                                <div className="flex flex-col w-full md:w-[65%] gap-2 md:gap-5">
+                                    <p
+                                        ref={companyRef.ref}
+                                        className="text-gray-300 text-[6vw] md:text-[2vw] font-[family-name:var(--font-archivo)]"
+                                        style={{
+                                            transform: companyRef.isInView ? "none" : "translateY(10px)",
+                                            opacity: companyRef.isInView ? 1 : 0,
+                                            transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.2s",
+                                        }}
+                                    >
+                                        {exp.company}
+                                    </p>
+                                    <p
+                                        ref={roleRef.ref}
+                                        className="text-gray-400 text-[4.5vw] md:text-[1.4vw]"
+                                        style={{
+                                            transform: roleRef.isInView ? "none" : "translateY(10px)",
+                                            opacity: roleRef.isInView ? 1 : 0,
+                                            transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.2s",
+                                        }}
+                                    >
+                                        <span className="text-gray-400 text-[4.5vw] md:text-[1.3vw]">
+                                            {exp.role} /{" "}
+                                        </span>
+                                        {exp.stack}
+                                    </p>
+                                </div>
+
+                                <div className="flex flex-col w-full md:w-[30%] md:gap-5 mt-3 md:mt-0 md:mb-2">
+                                    <p
+                                        ref={dateRef.ref}
+                                        className="text-gray-300 text-[5vw] md:text-[1.3vw]"
+                                        style={{
+                                            transform: dateRef.isInView ? "none" : "translateY(10px)",
+                                            opacity: dateRef.isInView ? 1 : 0,
+                                            transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.2s",
+                                        }}
+                                    >
+                                        {exp.date}
+                                    </p>
+                                    <p
+                                        ref={durationRef.ref}
+                                        className="text-gray-500 text-[4.5vw] md:text-[1.3vw]"
+                                        style={{
+                                            transform: durationRef.isInView ? "none" : "translateY(10px)",
+                                            opacity: durationRef.isInView ? 1 : 0,
+                                            transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.2s",
+                                        }}
+                                    >
+                                        {exp.duration}
+                                    </p>
+                                </div>
                             </div>
 
-                            {/* Date and Duration Info */}
-                            <div className="flex flex-col w-full md:w-[30%] md:gap-5 mt-3 md:mt-0 md:mb-2">
-                                <p className="text-gray-300 text-[5vw] md:text-[1.7vw]">
-                                    {exp.date}
-                                </p>
-                                <p className="text-gray-500 text-[4.5vw] md:text-[1.7vw]">
-                                    {exp.duration}
-                                </p>
-                            </div>
+                            <button
+                                className="self-end md:self-center mt-3 md:mt-0 text-slate-300 rounded-full flex items-center justify-center"
+                            >
+                                <ArrowUpRight className="h-[9vw] w-[9vw] md:h-[1.7vw] md:w-[1.7vw]" />
+                            </button>
                         </div>
-
-                        {/* Arrow Button */}
-                        <button
-                            className="self-end md:self-center mt-3 md:mt-0 text-slate-300 rounded-full flex items-center justify-center">
-                            <ArrowUpRight className="h-[9vw] w-[9vw] md:h-[3vw] md:w-[3vw]"/>
-                        </button>
-                    </div>
-                ))}
+                    );
+                })}
             </div>
         </div>
     );

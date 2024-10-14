@@ -13,7 +13,7 @@ const geistMono = localFont({
   weight: "100 900",
 });
 const ClashDisplaySemibold = localFont({
-  src: "./fonts/ClashDisplay-Semibold.woff",
+  src: "./fonts/ClashDisplay-Regular.woff",
   variable: "--font-clash-semi",
   weight: "100 900",
 });
