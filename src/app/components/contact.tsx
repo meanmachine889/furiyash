@@ -19,7 +19,7 @@ export function Contact() {
                 <div className="col-span-1 pt-9 h-full min-h-fit border-x border-gray-700 flex items-end justify-end">
                     <div className="max-h-[85%] min-h-fit w-full border-b px-3 md:py-0 py-9 border-gray-700">
                         <p className="text-[4vw] md:text-[2vw] lg:text-[1.9vw] text-gray-500 text-left transition-all cursor-pointer">
-                            Let’s collab<br/> & <br/>cook something together!
+                            Let&apos;s collab<br/> & <br/>cook something together!
                         </p>
                     </div>
                 </div>
