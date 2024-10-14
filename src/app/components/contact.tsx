@@ -4,7 +4,7 @@ import {ArrowRight, ArrowUpRight} from "lucide-react";
 
 export function Contact() {
     return (
-        <div className={"w-[100%] border-b border-gray-700 flex items-center flex-col"}>
+        <div className={"w-[100%] border-b border-gray-700 flex h-[10rem] min-h-fit items-center flex-col"}>
             <div
                 className="w-[100%] border-b text-gray-300 font-[family-name:var(--font-geist-mono)] text-[3vw] md:text-[1vw] border-gray-700 h-[2rem] md:h-[4rem] flex justify-center items-center">
                 <div className=" w-[5%] border-r flex items-center justify-center h-[100%] border-gray-700"></div>
