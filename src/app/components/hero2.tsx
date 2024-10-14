@@ -1,5 +1,4 @@
 import { BoxReveal } from "./ui/BoxReveal";
-import {ArrowDown} from "lucide-react";
 
 const Hero2 = () => {
 

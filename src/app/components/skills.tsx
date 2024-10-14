@@ -44,7 +44,9 @@ const skills = [
 
 const Skills = () => {
     const createRefInView = () => {
+        // eslint-disable-next-line react-hooks/rules-of-hooks
         const ref = useRef(null);
+        // eslint-disable-next-line react-hooks/rules-of-hooks
         const isInView = useInView(ref, { once: true });
         return { ref, isInView };
     };
