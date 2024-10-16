@@ -2,6 +2,7 @@ import {ArrowUpRight} from "lucide-react";
 import React from "react";
 import Pic from "../pic";
 import {StaticImageData} from "next/image";
+import Link from "next/link";
 
 interface ProjectProps {
     name: string;
@@ -9,7 +10,13 @@ interface ProjectProps {
     type: string;
     duration: string;
     date: string;
+    link: string;
     content: {
+        src: StaticImageData;
+        alt: string;
+        text: string;
+    }[];
+    content2: {
         src: StaticImageData;
         alt: string;
         text: string;
@@ -28,23 +35,24 @@ const Project: React.FC<{ data: ProjectProps }> = ({data}) => {
 
             <div
                 className="w-full border-y text-gray-300 border-gray-700 h-[10rem] grid grid-cols-2 md:grid-cols-12 justify-center items-center">
-                <div
-                    className="col-span-1 border-r items-center justify-center h-full border-gray-700 hidden md:flex"></div>
+                <div className="border-r items-center justify-center h-full border-gray-700 hidden md:flex"></div>
                 <div
                     className="col-span-2 md:col-span-4 font-[family-name:var(--font-archivo)] text-gray-300 font-semibold text-[8vw] md:text-[3.5vw] border-r flex items-center justify-center md:px-5 h-full border-gray-700">
-                    <p className="md:w-[100%] w-[90%] border-gray-700 flex items-center justify-center md:border-x-0 border-x h-[100%]">{data.name}</p>
+                    <p className="md:w-[100%] w-[100%] border-gray-700 flex items-center justify-center h-[100%]">{data.name}</p>
                 </div>
                 <div
-                    className="col-span-1 md:col-span-2 border-r items-center justify-center h-full border-gray-700 hidden md:flex"></div>
+                    className="md:col-span-2 border-r items-center justify-center h-full border-gray-700 hidden md:flex"></div>
 
                 <div
                     className="col-span-2 border-r items-center justify-center h-full border-gray-700 hidden md:flex"></div>
                 <div
                     className="col-span-2 md:col-span-2 grids border-r md:border-t-0 border-t flex items-center justify-center h-full border-gray-700">
-                    <div
-                        className="md:w-full w-[90%] md:border-x-0 border-x bg-black md:h-fit h-[100%] md:py-5 md:px-0 px-9 hover:bg-gray-300 hover:text-slate-900 transition-all hover:gap-6 hover:scale-105 border-y gap-2 md:gap-5 flex items-center justify-center border-gray-700 text-[4vw] md:text-base">
-                        Visit Website <ArrowUpRight size={20}/>
-                    </div>
+                    <Link
+                        target={"_blank"}
+                        href={data.link}
+                        className="md:w-full w-[100%] bg-black md:h-fit h-[100%] md:py-5 md:px-0 px-9 hover:bg-gray-300 hover:text-slate-900 transition-all hover:gap-6 hover:scale-105 border-y gap-2 md:gap-5 flex items-center justify-center border-gray-700 text-[4vw] md:text-base">
+                        Visit <ArrowUpRight size={20}/>
+                    </Link>
                 </div>
             </div>
 
@@ -82,6 +90,25 @@ const Project: React.FC<{ data: ProjectProps }> = ({data}) => {
             </div>
 
             <Pic content={data.content}/>
+            <div className="w-[100%] min-h-[4rem] border-b grid grid-cols-12 border-gray-700">
+                <div className="border-r col-span-1  border-gray-700 w-full"></div>
+                <div className="col-span-10 border-gray-700 w-full"></div>
+                <div className="border-l col-span-1 border-gray-700 w-full"></div>
+            </div>
+            <div className="w-[100%] min-h-[4rem] grid grid-cols-12 border-b border-gray-700">
+                <div className="border-r md:col-span-1 md:flex hidden grids border-gray-700 w-full"></div>
+                <div
+                    className="md:col-span-10 col-span-12 border-gray-700 w-full flex h-[100%] text-[4vw] md:text-[2.3vw]  text-gray-300 lg:text-[1.5vw] items-center justify-center"> Features
+                    Implemented
+                </div>
+                <div className="border-l md:col-span-1 md:flex hidden grids border-gray-700 w-full"></div>
+            </div>
+            <Pic content={data.content2}/>
+            <div className="w-[100%] min-h-[4rem] border-b grid grid-cols-12 border-gray-700">
+                <div className="border-r col-span-1  border-gray-700 w-full"></div>
+                <div className="col-span-10 border-gray-700 w-full"></div>
+                <div className="border-l col-span-1 border-gray-700 w-full"></div>
+            </div>
         </div>
     );
 };

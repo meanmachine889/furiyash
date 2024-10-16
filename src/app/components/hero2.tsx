@@ -1,4 +1,5 @@
 import { BoxReveal } from "./ui/BoxReveal";
+import Link from "next/link";
 
 const Hero2 = () => {
 
@@ -20,17 +21,13 @@ const Hero2 = () => {
           </div>
 
           <BoxReveal boxColor={"0b0b0b"} duration={1}>
-            <div
+            <Link
+                href="mailto:yashbharadwaj131@gmail.com"
+                target={"_blank"}
                 className="border-gray-300 font-[family-name:var(--font-geist-mono)] mt-5 px-5 py-3 rounded-full text-gray-300 border-2 md:px-7 md:py-5 lg:text-[1.2vw] text-[3vw] flex items-center justify-between w-[100%] md:w-[70%] lg:w-auto gap-5">
               Say hi!
-            </div>
+            </Link>
           </BoxReveal>
-
-          {/*<div className="flex justify-center w-full lg:bottom-12">*/}
-          {/*  <div className="border border-gray-700 p-3 rounded-full">*/}
-          {/*    <ArrowDown/>*/}
-          {/*  </div>*/}
-          {/*</div>*/}
         </div>
       </div>
   );

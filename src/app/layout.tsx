@@ -52,9 +52,6 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} ${ClashDisplaySemibold.variable} ${Archivo.variable} ${ArchivoBold.variable} antialiased`}
       >
         {children}
-        <footer>
-          {/* <Footer /> */}
-        </footer>
       </body>
     </html>
   );

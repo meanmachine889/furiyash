@@ -1,6 +1,7 @@
 import {ArrowUpRight} from "lucide-react";
 import React, { useRef } from "react";
 import { useInView } from "framer-motion";
+import Link from "next/link";
 
 const experience = [
     {
@@ -9,6 +10,7 @@ const experience = [
         company: "Eventory",
         role: "Fullstack Developer",
         stack: "NextJs Nodejs Express AWS",
+        href: "https://eventory.in/"
     },
     {
         date: "Jul-Current",
@@ -16,6 +18,7 @@ const experience = [
         company: "M#",
         role: "Fullstack Developer",
         stack: "NextJs Nodejs Express AWS",
+        href: "https://hackathon.manipal.edu"
     },
     {
         date: "May-Aug 2024",
@@ -23,6 +26,7 @@ const experience = [
         company: "Horse's Mouth",
         role: "Fullstack Developer",
         stack: "NextJs AWS Jotai",
+        href: "https://www.horsesmouth.in/"
     },
     {
         date: "Jul-Current",
@@ -30,6 +34,7 @@ const experience = [
         company: "MTTN",
         role: "Dev Head",
         stack: "NextJs AWS",
+        href: "https://www.manipalthetalk.org/"
     },
 ];
 
@@ -113,11 +118,13 @@ const Experience = () => {
                                 </div>
                             </div>
 
-                            <button
+                            <Link
+                                href={exp.href}
+                                target={"_blank"}
                                 className="self-end md:self-center mt-3 md:mt-0 text-slate-300 rounded-full flex items-center justify-center"
                             >
                                 <ArrowUpRight className="h-[9vw] w-[9vw] md:h-[1.7vw] md:w-[1.7vw]" />
-                            </button>
+                            </Link>
                         </div>
                     );
                 })}
